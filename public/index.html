@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Share with friends and earn rewards."
+    >
+
+    <title>Share & Earn</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🎁 Share<span>Earn</span>
+        </div>
+
+        <button
+            class="nav-button"
+            onclick="scrollToRewards()"
+        >
+            Rewards
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ✨ Invite • Share • Earn
+                </div>
+
+                <h1>
+                    Share with friends.
+                    <br>
+                    <span>Earn amazing rewards.</span>
+                </h1>
+
+                <p>
+                    Invite your friends using your personal
+                    referral link and unlock exciting rewards.
+                </p>
+
+                <button
+                    class="primary-button"
+                    onclick="scrollToInvite()"
+                >
+                    Start Sharing
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="gift-icon">
+                    🎁
+                </div>
+
+                <h3>
+                    Your Rewards
+                </h3>
+
+                <div
+                    class="points"
+                    id="points"
+                >
+                    0
+                </div>
+
+                <p>
+                    Reward Points
+                </p>
+
+                <div class="mini-stats">
+
+                    <div>
+                        <strong id="referralCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Referrals
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            ⭐
+                        </strong>
+
+                        <span>
+                            Your Level
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVITE SECTION -->
+
+        <section
+            class="invite-section"
+            id="invite"
+        >
+
+            <div class="section-heading">
+
+                <span>
+                    STEP 1
+                </span>
+
+                <h2>
+                    Share your invitation
+                </h2>
+
+                <p>
+                    Copy your personal referral link
+                    and share it with your friends.
+                </p>
+
+            </div>
+
+
+            <div class="referral-card">
+
+                <label>
+                    Your personal referral link
+                </label>
+
+                <div class="link-box">
+
+                    <input
+                        type="text"
+                        id="referralLink"
+                        readonly
+                    >
+
+                    <button
+                        onclick="copyReferralLink()"
+                    >
+                        📋 Copy
+                    </button>
+
+                </div>
+
+
+                <div class="share-buttons">
+
+                    <button
+                        class="whatsapp"
+                        onclick="shareWhatsApp()"
+                    >
+                        <span>🟢</span>
+                        WhatsApp
+                    </button>
+
+
+                    <button
+                        class="share"
+                        onclick="nativeShare()"
+                    >
+                        <span>📤</span>
+                        More
+                    </button>
+
+                </div>
+
+                <div
+                    class="copy-message"
+                    id="copyMessage"
+                >
+                    Link copied successfully! 🎉
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section class="steps-section">
+
+            <div class="section-heading">
+
+                <span>
+                    HOW IT WORKS
+                </span>
+
+                <h2>
+                    Three simple steps
+                </h2>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div class="step-icon">
+                        🔗
+                    </div>
+
+                    <h3>
+                        Get your link
+                    </h3>
+
+                    <p>
+                        Your personal referral link
+                        is generated automatically.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div class="step-icon">
+                        📤
+                    </div>
+
+                    <h3>
+                        Share it
+                    </h3>
+
+                    <p>
+                        Send your link to friends
+                        through WhatsApp or social media.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div class="step-icon">
+                        🎁
+                    </div>
+
+                    <h3>
+                        Unlock rewards
+                    </h3>
+
+                    <p>
+                        Reach referral milestones
+                        and unlock your rewards.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REWARDS -->
+
+        <section
+            class="rewards-section"
+            id="rewards"
+        >
+
+            <div class="section-heading">
+
+                <span>
+                    STEP 2
+                </span>
+
+                <h2>
+                    Unlock your rewards
+                </h2>
+
+                <p>
+                    Invite more friends to reach
+                    bigger rewards.
+                </p>
+
+            </div>
+
+
+            <div class="reward-container">
+
+                <!-- Progress -->
+
+                <div class="progress-card">
+
+                    <div class="progress-top">
+
+                        <div>
+
+                            <span>
+                                Your progress
+                            </span>
+
+                            <strong id="progressText">
+                                0 / 5 referrals
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-percent">
+                            <span id="progressPercent">
+                                0%
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill"
+                            id="progressFill"
+                        ></div>
+
+                    </div>
+
+
+                    <p id="nextReward">
+                        Invite 5 friends to unlock
+                        your first reward.
+                    </p>
+
+                </div>
+
+
+                <!-- Reward cards -->
+
+                <div class="reward-grid">
+
+                    <div
+                        class="reward-card"
+                        data-required="5"
+                    >
+
+                        <div class="reward-top">
+
+                            <div class="reward-emoji">
+                                🎁
+                            </div>
+
+                            <span class="locked">
+                                🔒
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Starter Reward
+                        </h3>
+
+                        <p>
+                            Invite 5 friends
+                        </p>
+
+                        <div class="reward-value">
+                            100 ⭐
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="reward-card"
+                        data-required="10"
+                    >
+
+                        <div class="reward-top">
+
+                            <div class="reward-emoji">
+                                🎉
+                            </div>
+
+                            <span class="locked">
+                                🔒
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Super Sharer
+                        </h3>
+
+                        <p>
+                            Invite 10 friends
+                        </p>
+
+                        <div class="reward-value">
+                            300 ⭐
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="reward-card"
+                        data-required="25"
+                    >
+
+                        <div class="reward-top">
+
+                            <div class="reward-emoji">
+                                🏆
+                            </div>
+
+                            <span class="locked">
+                                🔒
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Champion
+                        </h3>
+
+                        <p>
+                            Invite 25 friends
+                        </p>
+
+                        <div class="reward-value">
+                            1,000 ⭐
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta-section">
+
+            <div class="cta-content">
+
+                <div class="cta-icon">
+                    🚀
+                </div>
+
+                <h2>
+                    Ready to start earning?
+                </h2>
+
+                <p>
+                    Share your link with your friends
+                    and start unlocking rewards.
+                </p>
+
+                <button
+                    class="primary-button"
+                    onclick="scrollToInvite()"
+                >
+                    Share Now
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🎁 ShareEarn
+        </div>
+
+        <p>
+            Share with friends. Earn rewards.
+        </p>
+
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="copyright">
+            © 2026 ShareEarn. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        🎉 Link copied!
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
